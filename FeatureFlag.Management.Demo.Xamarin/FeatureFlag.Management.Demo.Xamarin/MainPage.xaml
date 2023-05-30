@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FeatureFlag.Management.Demo.Xamarin.MainPage"
+             xmlns:myApp="clr-namespace:FeatureFlag.Management.Demo.Xamarin">
+
+
+    <FeatureView FeatureType="{x:Type myApp:MyFeature}">
+        <FeatureView.EnabledView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Welcome to FeatureEnabled!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+                <Button Text="Disable feature!" Clicked="Disable_Clicked"/>
+            </StackLayout>
+        </FeatureView.EnabledView>
+
+        <FeatureView.DisabledView>
+            <StackLayout>
+                <Frame BackgroundColor="Red" Padding="24" CornerRadius="0">
+                    <Label Text="Welcome to Feature Disabled!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+                <Button Text="Enable feature!" Clicked="Enable_Clicked"/>
+            </StackLayout>
+        </FeatureView.DisabledView>
+    </FeatureView>
+</ContentPage>
